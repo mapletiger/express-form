@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang=jp>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link href="css/stylesheet1.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="col-12" id="head-section">
+            <div class="header"><img class="logo" src="images/logo.png"> <h2></h2></div>
+        </div>
+        <div class="col-12" id="all">
+                <% if (locals.errors) {
+                    %>
+                    <div class="error-msg">
+                            <p class="red" style="text-align: center; border: 1px solid red; padding-bottom: 10px; padding-top: 10px;">Entry Error<br>Please fix errors on the form before submitting<br>
+                            </p>
+                    </div>
+                    <%
+                    } %>
+        <div class="description" > 
+        <div class="top-text">
+            </p>
+            <p class="form-enter"></p>
+        </div>
+            <div class="details col-12 col-md-6 col-lg-6">
+                    <ul class="list-unstyled">
+                    <br>
+                    <li></li>
+                    <li class="right"></li>
+                    <li class="right"></li>
+                    <li class="right"></li>
+                    <li class="right"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    </ul>
+        </div>
+        </div>
+        </div>
+        <div class="important-notices">
+            <br>
+            <p id="notice-head"><br>
+            </p>
+        </div>
+        <p><br>
+        </p>
+        <div class="row" id="form-section">
+          <form class="col-12 col-md-8 col-lg-10 col-xl-8 mx-auto" id="submit-form" action="intake/submit" role="form" method="post">
+            <div class="form-group col-12">
+               <div class="errors">
+                 <% if (locals.errors) {
+                 %><ul>
+                <% errors.forEach(function(error) { %>
+                 <li> <%= error.msg %> </li> <%
+                 }) %> </ul> <% } %>
+               </div>
+            </div>
+            <div class="row">
+            <div class="form-group col-6">
+                 <label for="sei" class="col-12 col-lg-4 col-form-label"></label>
+                <% if (locals.sei) { %>
+                <input type="text" class="form-control col-10 col-lg-6" id="name-input" placeholder="姓" required="required" data-error="入力しておりません" name="sei" value="<%- sei %>">
+                <% } else { %>
+                <input type="text" class="form-control col-10 col-lg-6" id="name-input" placeholder="姓" required="required" data-error="入力しておりません" name="sei">
+                <% } %>
+            </div>
+            <div class="form-group col-6">
+                <label for="mei" class="col-12 col-lg-4 col-form-label"></label>
+               <% if (locals.mei) { %>
+               <input type="text" class="form-control col-10 col-lg-6" id="name-input" placeholder="名" required="required" data-error="入力しておりません" name="mei" value="<%- mei %>">
+               <% } else { %>
+               <input type="text" class="form-control col-10 col-lg-6" id="name-input" placeholder="名" required="required" data-error="入力しておりません" name="mei">
+               <% } %>
+            </div>
+            </div>
+            <div class="row">
+            <div class="form-group col-6">
+                <label for="furigana" class="col-12 col-lg-4 col-form-label"></label>
+               <% if (locals.furisei) { %>
+               <input type="text" class="form-control col-10 col-lg-6" id="furigana-input" placeholder="せい" required="required" data-error="入力しておりません" name="furisei" value="<%- furisei %>">
+               <% } else { %>
+               <input type="text" class="form-control col-10 col-lg-6" id="furigana-input" placeholder="せい" required="required" data-error="入力しておりません" name="furisei">
+               <% } %>
+            </div>
+               <div class="form-group col-6">
+               <label for="furigana" class="col-12 col-lg-4 col-form-label"></label>
+              <% if (locals.furimei) { %>
+              <input type="text" class="form-control col-10 col-lg-6" id="furigana-input" placeholder="めい" required="required" data-error="入力しておりません" name="furimei" value="<%- furimei %>">
+              <% } else { %>
+              <input type="text" class="form-control col-10 col-lg-6" id="furigana-input" placeholder="めい" required="required" data-error="入力しておりません" name="furimei">
+              <% } %>
+               </div>
+            </div>
+            <div class="form-group col-12">
+                <label for="email" class="col-12 col-lg-4 col-form-label"></label>
+                <% if (locals.email) { %>
+                <input type="email" class="form-control col-10 col-lg-5" id="email" placeholder="メールアドレス" required="required" data-error="入力しておりません" name="email" value="<%- email %>">
+                <% } else { %>
+                <input type="email" class="form-control col-10 col-lg-5" id="email" placeholder="メールアドレス" required="required" data-error="入力しておりません" name="email">
+                <% } %>
+            </div>
+            <div class="form-group col-12">
+                <label for="phone-num" class="col-12 col-lg-4 col-form-label"></label>
+                <% if (locals.phone) { %>
+                <input type="phone" class="form-control col-10 col-lg-5" id="phone" placeholder="030-1234-5678" required="required" data-error="入力しておりません" name="phone" value="<%- phone %>">
+                <% } else { %>
+                <input type="phone" class="form-control col-10 col-lg-5" id="phone" placeholder="030-1234-5678" required="required" data-error="入力しておりません" name="phone">
+                <% } %>
+            </div>
+            <div class="form-group col-12">
+                    <label for="join-day" class="col-12 col-lg-4 col-form-label"></label>
+                    <% if (locals.joinday) { %>
+                        <select name="joinday" required="required" class="form-control col-10 col-lg-5">
+                        <%
+                        var options = [ "1月6日（木）18:45～20:30", "1月13日（木）18:45～20:30", "1月20日（木）18:45～20:30", "1月27日（木）18:45～20:30"];
+                        for ( var i = 0; i < options.length; i++ )
+                        {
+                            if (options [ i ] == joinday){
+                                %> <option selected value="<%=options[ i ] %>"><%=options[ i ] %></option><%
+                            }
+                            else {
+                                %><option value="<%=options[ i ] %>"> <%=options[ i ] %></option><%
+                            }
+                        }
+                        %>
+                        </select>
+                    <% } else { %>
+                    <select name="joinday" required="required" class="form-control col-10 col-lg-5">
+                                <option disabled selected value> -- 参加日を選択してください -- </option>
+                                <option value="1月6日（木）18:45～20:30">1月6日（木）18:45～20:30</option>
+                                <option value="1月13日（木）18:45～20:30">1月13日（木）18:45～20:30</option>
+                                <option value="1月20日（木）18:45～20:30">1月20日（木）18:45～20:30</option>
+                                <option value="1月27日（木）18:45～20:30">1月27日（木）18:45～20:30</option>
+                    </select>
+                    <% } %>  
+                    </div>
+    
+            <label for="konshinkai"> </label>
+                <br>
+                <div class="form-group col-12">
+                        <br>
+                            <button type="submit" class="btn send-button"></button>
+                </div>
+            </div>
+        </form>
+      </div>
+        </div>
+    </body>
+</html>

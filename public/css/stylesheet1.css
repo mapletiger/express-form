@@ -1,0 +1,96 @@
+* {
+    font-size: 0.98em;
+}
+a {
+    word-wrap: break-word;
+}
+#submit-form {
+    background-color:#E8E8E8;
+    border:1px;
+    border-style: solid;
+    margin-left:5px;
+}
+.row {
+   margin-left: 0px;
+   margin-right: 0px;
+}
+.right {
+    text-decoration: none;
+    list-style-type: none;
+    margin-left: 60px;
+}
+.right2 {
+    text-decoration: none;
+    list-style-type: none;
+    margin-left: 102px;
+}
+.details {
+    border:1px;
+    border-style: solid;
+    font-family: sans-serif;
+
+}
+.description {
+    background-color: white;
+}
+h2 {
+    padding-top:20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color:white;
+    font-size: 1.8rem;
+    text-align: center;
+}
+.important-notices
+{
+  
+   font-size: 0.75em;
+   margin: 10px;
+    
+}
+.errors {
+    color: #cc0000;
+    white-space: normal;
+}
+body {
+    background-color:white;
+    width:auto;
+}
+.form-group {
+    padding-left: 25px;
+    white-space: auto;
+}
+.header {
+    background-color: black;
+}
+#head-section {
+    background-color: black;
+}
+#all {
+    background-color: white;
+}
+.short-bottom {
+    margin-bottom: -20px;
+}
+button {
+    background-color:black;
+    color:white;
+}
+.notice {
+    list-style-type: none;
+}
+.logo {
+    max-height: 50px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+#form-section {
+    margin-bottom: 20px;
+    font-size: 0.87em;
+}
+.red {
+    color: red;
+    font-weight: bold;
+    font-size: 1.1em;
+}
